@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="gb.java2fx.lesson4.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.layout.BorderPane?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="gb.java2fx.lesson4.HelloController">
+    <top>
+        <MenuBar>
+            <Menu text="Options">
+                <MenuItem fx:id="exitMenu" text="Exit" onAction="#clickExit"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <TextArea fx:id="textArea" editable="false" style="-fx-control-inner-background:#cccccc;" minWidth="300"/>
+    </center>
+
+    <bottom>
+        <HBox>
+            <TextField fx:id="inputText" onAction="#SendMessage" minWidth="250"/>
+            <Button  fx:id="sendBtn" text="Send" onAction="#SendMessage"/>
+        </HBox>
+    </bottom>
+</BorderPane>
